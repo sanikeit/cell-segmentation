@@ -30,6 +30,8 @@ class MoNuSegDataset(Dataset):
         self.scaled_size = int(patch_size * scale_factor)
         self.scale_factor = scale_factor
         self.transform = transform
+        self.stride = patch_size // 4  # Initialize stride attribute
+        self.min_cell_area = 50  # Minimum cell area to count
         
         num_train = int(len(self.image_paths) * train_ratio)
         if num_train == 0:
@@ -78,9 +80,6 @@ class MoNuSegDataset(Dataset):
                 image, mask, patches_img, patches_mask,
                 vis_dir, prefix=f"image_{idx}_"
             )
-        
-        self.stride = patch_size // 4  # Reduce stride for more overlap
-        self.min_cell_area = 50  # Minimum cell area to count
         
     def __len__(self):
         return len(self.image_paths)
@@ -171,7 +170,7 @@ class MoNuSegDataset(Dataset):
         
         for y in rows:
             for x in cols:
-                patch_img = image[y:y + self.patch_size, x:x + self.patch_size]
+                patch_img = image[y+y + self.patch_size, x:x + self.patch_size]
                 patch_mask = mask[y:y + self.patch_size, x:x + self.patch_size]
                 
                 scaled_img = cv2.resize(patch_img, (self.scaled_size, self.scaled_size))

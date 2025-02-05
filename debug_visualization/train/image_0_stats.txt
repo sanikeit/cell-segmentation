@@ -1,10 +1,10 @@
 Original Image Shape: (1000, 1000, 3)
 Original Mask Shape: (1000, 1000)
-Total Cells in Original: 286
+Total Cells in Original: 291
 Number of Patches: 16
 Patch Size: 128x128
 Stride: 64
-Average Cells per Patch: 7.62
-Max Cells in a Patch: 9
+Average Cells per Patch: 7.44
+Max Cells in a Patch: 10
 Min Cells in a Patch: 6
-Total Cells in All Patches: 122
+Total Cells in All Patches: 119
