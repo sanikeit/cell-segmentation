@@ -1,0 +1,20 @@
+name: cell-seg
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pytorch
+  - torchvision
+  - pytorch-lightning
+  - opencv
+  - albumentations
+  - scikit-learn
+  - tensorboard
+  - matplotlib
+  - numpy
+  - pillow
+  - pip
+  - pip:
+    - timm

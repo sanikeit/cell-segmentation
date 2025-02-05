@@ -1,0 +1,21 @@
+cell-segmentation
+├── src
+│   ├── data
+│   │   ├── dataset.py
+│   │   └── transforms.py
+│   ├── models
+│   │   ├── unet.py
+│   │   └── utils.py
+│   ├── utils
+│   │   ├── cell_counter.py
+│   │   ├── metrics.py
+│   │   └── visualization.py
+│   ├── config.py
+│   └── train.py
+├── notebooks
+│   └── data_exploration.ipynb
+├── configs
+│   └── default.yaml
+├── requirements.txt
+├── setup.py
+└── README.md
